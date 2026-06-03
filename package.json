@@ -1,0 +1,35 @@
+{
+  "name": "agent4all-cookbook-deepagent",
+  "version": "1.0.0",
+  "description": "让 DeepAgent 不再 deep：面向小白的 DeepAgent 开源教程",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaxwelsDonc/agent4all-cookbook-deepagent.git"
+  },
+  "keywords": [
+    "deepagents",
+    "langchain",
+    "langgraph",
+    "agent",
+    "tutorial"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MaxwelsDonc/agent4all-cookbook-deepagent/issues"
+  },
+  "homepage": "https://github.com/MaxwelsDonc/agent4all-cookbook-deepagent#readme",
+  "devDependencies": {
+    "debug": "^4.4.3",
+    "mermaid": "^11.15.0",
+    "vitepress": "^1.6.4",
+    "vitepress-plugin-mermaid": "^2.0.17"
+  }
+}
