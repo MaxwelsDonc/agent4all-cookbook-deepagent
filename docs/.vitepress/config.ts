@@ -27,7 +27,10 @@ export default withMermaid(
           items: [
             { text: '课程介绍', link: '/courses/01-basics/' },
             { text: '什么是 Agent', link: '/courses/01-basics/what-is-agent' },
-            { text: 'LangChain、LangGraph 和 DeepAgents', link: '/courses/01-basics/langchain-langgraph-deepagents' }
+            { text: 'LangChain、LangGraph 和 DeepAgents', link: '/courses/01-basics/langchain-langgraph-deepagents' },
+            { text: 'Model、Token、Prompt、Messages 和 Context', link: '/courses/01-basics/model-token-prompt-messages-context' },
+            { text: 'DeepAgent 到底 deep 在哪里', link: '/courses/01-basics/why-deep-agent' },
+            { text: '本章自测', link: '/courses/01-basics/chapter-check' }
           ]
         },
         {

@@ -30,6 +30,40 @@ Agent 不应该只是少数工程师和研究者才能理解的东西。
 
 Agent4all 的意思是：Agent for all。希望这个项目能让更多普通人理解 Agent、使用 Agent，并最终创造自己的 Agent。
 
+## 本地预览和调试网页
+
+这个项目使用 VitePress 搭建文档站。
+
+第一次运行前，先安装依赖：
+
+```bash
+npm install
+```
+
+启动本地开发服务：
+
+```bash
+npm run docs:dev
+```
+
+启动后，终端会显示一个本地地址，通常是：
+
+```text
+http://localhost:5173/agent4all-cookbook-deepagent/
+```
+
+在浏览器打开这个地址，就可以预览网页。
+
+修改 `docs/` 里的 Markdown 文件后，页面通常会自动热更新。如果浏览器没有变化，可以手动刷新页面。
+
+提交前建议运行一次构建检查：
+
+```bash
+npm run docs:build
+```
+
+如果构建通过，说明当前文档站可以正常生成静态网页。
+
 ## 当前状态
 
 项目正在准备中。
