@@ -36,7 +36,12 @@ export default withMermaid(
         {
           text: '02. 从 0 跑通第一个 Agent',
           items: [
-            { text: '课程介绍', link: '/courses/02-first-agent/' }
+            { text: '课程介绍', link: '/courses/02-first-agent/' },
+            { text: '准备 Python 环境', link: '/courses/02-first-agent/python-environment' },
+            { text: 'API Key 与环境变量', link: '/courses/02-first-agent/api-key-and-env' },
+            { text: '安装 Deep Agents', link: '/courses/02-first-agent/install-deepagents' },
+            { text: '跑通第一个 Agent', link: '/courses/02-first-agent/first-agent' },
+            { text: '看懂第一次输出', link: '/courses/02-first-agent/understand-output' }
           ]
         },
         {

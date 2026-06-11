@@ -2,5 +2,9 @@ node_modules/
 docs/.vitepress/cache/
 docs/.vitepress/dist/
 
+.venv/
+.env
+first_agent.py
+
 .DS_Store
 *.log
