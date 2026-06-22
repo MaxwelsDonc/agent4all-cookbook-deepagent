@@ -53,7 +53,12 @@ export default withMermaid(
         {
           text: '04. 让 Agent 能完成复杂任务',
           items: [
-            { text: '课程介绍', link: '/courses/04-deep-capabilities/' }
+            { text: '课程介绍', link: '/courses/04-deep-capabilities/' },
+            { text: 'Planning：先想清楚再行动', link: '/courses/04-deep-capabilities/planning' },
+            { text: '文件系统：保存中间结果', link: '/courses/04-deep-capabilities/filesystem' },
+            { text: 'Context engineering：管理上下文', link: '/courses/04-deep-capabilities/context-engineering' },
+            { text: 'Memory：记住长期信息', link: '/courses/04-deep-capabilities/memory' },
+            { text: 'Subagent：分工协作', link: '/courses/04-deep-capabilities/subagent' }
           ]
         },
         {
