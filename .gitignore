@@ -5,6 +5,8 @@ docs/.vitepress/dist/
 .venv/
 .env
 first_agent.py
+maxlance_agent.py
+learning_notes/
 
 .DS_Store
 *.log

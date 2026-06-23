@@ -47,7 +47,12 @@ export default withMermaid(
         {
           text: '03. 让 Agent 会使用工具',
           items: [
-            { text: '课程介绍', link: '/courses/03-tools/' }
+            { text: '课程介绍', link: '/courses/03-tools/' },
+            { text: '为什么 Agent 需要工具', link: '/courses/03-tools/why-tools' },
+            { text: '写第一个 Python 工具', link: '/courses/03-tools/first-python-tool' },
+            { text: '让 Agent 调用工具', link: '/courses/03-tools/agent-call-tool' },
+            { text: '工具参数、返回值和 docstring', link: '/courses/03-tools/tool-parameters-return-docstring' },
+            { text: '工具失败与权限边界', link: '/courses/03-tools/tool-failure-permission' }
           ]
         },
         {

@@ -162,9 +162,11 @@ Subagent 子 Agent
 
 建议使用：
 
-> 一个帮助小白学习 DeepAgent 的 Agent。
+> MaxLance Assistant，一个帮助小白学习 DeepAgent 的学习助理。
 
 读者一边学习 DeepAgent，一边亲手搭建一个能够帮助自己学习 DeepAgent 的 Agent。
+
+MaxLance 这个名字来自两个贡献者：Maxwel 和 Lancer。它可以先作为单个学习助理存在，后续在多 Agent 教学里，再扩展出 Hugging Face 助理、虚拟角色助理、文档助理等不同领域的协作角色。
 
 这个项目可以逐步演进：
 
