@@ -79,17 +79,18 @@ Agent 不只是生成一段话，而是先做了一步可验证的操作。
 
 一个典型流程是：
 
-<div class="a4a-flow">
-  <div><b>用户提出任务</b></div>
-  <div><b>Agent 理解任务</b></div>
-  <div><b>需要工具吗？</b><span>不需要 → 直接回答；需要 → 继续下面的步骤</span></div>
-  <div><b>选择合适工具</b></div>
-  <div><b>准备工具参数</b></div>
-  <div><b>调用工具</b></div>
-  <div><b>工具返回结果</b></div>
-  <div><b>结果进入上下文</b></div>
-  <div class="is-end"><b>Agent 生成最终回答</b></div>
-</div>
+```mermaid
+flowchart TD
+  A[用户提出任务] --> B[Agent 理解任务]
+  B --> C{是否需要工具}
+  C -->|不需要| D[直接回答]
+  C -->|需要| E[选择合适工具]
+  E --> F[准备工具参数]
+  F --> G[调用工具]
+  G --> H[工具返回结果]
+  H --> I[结果进入上下文]
+  I --> J[Agent 生成最终回答]
+```
 
 现在不用背这个流程。
 
@@ -143,14 +144,6 @@ MaxLance Assistant 是一个 DeepAgent 学习助理。
 模型会根据任务、工具说明、系统提示词来判断是否调用工具。
 
 如果工具描述不清楚，Agent 可能不用工具，或者用错工具。
-
-## 自测
-
-试着回答：
-
-1. Tool 和 Tool Calling 有什么区别？
-2. 为什么模型不能只靠自己完成所有任务？
-3. MaxLance Assistant 第一个阶段最适合先加哪几类简单工具？
 
 ## 小结
 
