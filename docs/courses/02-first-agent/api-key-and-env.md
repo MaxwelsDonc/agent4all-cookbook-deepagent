@@ -75,10 +75,8 @@ ANTHROPIC_API_KEY=这里换成你的 API Key
 
 现在只要知道：
 
-```text
-.env 负责保存本地配置
-python-dotenv 负责把配置读进 Python 程序
-```
+- **`.env`** 负责保存本地配置
+- **`python-dotenv`** 负责把配置读进 Python 程序
 
 ## 你应该看到什么结果
 
@@ -138,14 +136,20 @@ OPENAI_API_KEY = 你的 key
 
 有些读取工具可以处理空格，但新手阶段先保持最简单。
 
+## 自测
+
+确认你能回答：
+
+1. API Key 为什么不能直接写进代码或提交到 GitHub？
+2. `.env` 文件解决了什么问题？
+3. 如果程序提示 authentication 或 API key 错误，你会先检查哪两个地方？
+
 ## 小结
 
 这一节你只需要记住：
 
-```text
-API Key：调用模型服务的钥匙
-.env：只放在本地的配置文件
-.gitignore：告诉 Git 不要提交敏感文件
-```
+- **API Key**：调用模型服务的钥匙
+- **`.env`**：只放在本地的配置文件
+- **`.gitignore`**：告诉 Git 不要提交敏感文件
 
 下一节，我们会安装 Deep Agents 和运行代码需要的依赖。

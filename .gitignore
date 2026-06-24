@@ -9,9 +9,17 @@ maxlance_agent.py
 complex_agent.py
 memory_agent.py
 subagent_demo.py
+safe_agent.py
+hitl_agent.py
+streaming_agent.py
+learning_coach_agent.py
 learning_notes/
 notes/
 memories/
+agent4all_workspace/
 
 .DS_Store
 *.log
+
+.tmp-screens/
+SKILL.md

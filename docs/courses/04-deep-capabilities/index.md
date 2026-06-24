@@ -1,52 +1,44 @@
 # 04. 让 Agent 能完成复杂任务
 
-前面几章我们已经走过三步：
+前面几章，MaxLance Assistant 已经走过三步：
 
-1. 先理解 Agent 是什么。
-2. 在本地跑通第一个 Agent。
-3. 让 Agent 学会使用工具。
+1. 先看懂它需要哪些部件。
+2. 在本地跑通第一个版本。
+3. 让它学会调用工具。
 
 这一章开始进入 Deep Agents 更核心的地方。
 
 我们不再只让 Agent 回答一个问题，而是让它处理更长、更复杂、更像真实工作的任务。
 
-## 这一课你会学到什么
-
-- Planning 是什么，为什么复杂任务要先拆步骤。
-- Deep Agents 里的 `write_todos` 可以怎么理解。
-- 文件系统为什么能帮 Agent 保存中间结果。
-- Context engineering 是什么，为什么不是把所有资料都塞进上下文。
-- Memory 和普通聊天记录有什么区别。
-- Subagent 是什么，什么时候需要让多个 Agent 分工。
-
-## 一句话讲清楚
+## 这一章会学什么
 
 复杂任务不能只靠“模型直接回答”。
 
-Deep Agents 会给 Agent 配上更完整的工作方式：
+MaxLance Assistant 需要学会：
 
-```text
-先计划
-再执行
-过程中保存中间结果
-只把关键内容放进上下文
-需要时记住长期偏好
-任务太大时交给子 Agent 分工
-```
+- 先计划
+- 再执行
+- 过程中保存中间结果
+- 只把关键内容放进上下文
+- 需要时记住长期偏好
+- 任务太大时交给子 Agent 分工
 
 用“电脑里的人”来理解：
 
 > 他不再只是坐在电脑前聊天，而是开始像一个真正的助理一样，写待办、整理文件、保存笔记、记住偏好，并在任务太大时请别人一起做。
 
-## 这一章会做什么
+## 为什么要进入复杂任务
 
-我们会围绕一个贯穿任务继续改造学习助手：
+第三章的工具调用还比较短：
 
-```text
-请帮我制定一个 7 天 DeepAgent 学习计划，
-保存关键学习笔记，
-并根据我的薄弱点生成复习建议。
-```
+1. 用户提出问题
+2. Agent 选择工具
+3. 工具返回结果
+4. Agent 回答用户
+
+但真实学习任务经常更长，比如：
+
+> 请帮我制定一个 7 天 DeepAgent 学习计划，保存关键学习笔记，并根据我的薄弱点生成复习建议。
 
 这已经不是一句简单回答能稳定完成的任务。
 
@@ -58,9 +50,9 @@ Deep Agents 会给 Agent 配上更完整的工作方式：
 - 记住用户偏好。
 - 在需要时把某个子任务交给专门的 subagent。
 
-## 这一章不急着做什么
+## 本章不急着做什么
 
-为了让新手先学明白，这一章不会一上来讲生产环境里的复杂配置。
+为了让初学者先学明白，这一章不会一上来讲生产环境里的复杂配置。
 
 我们先不深入这些内容：
 
@@ -72,39 +64,45 @@ Deep Agents 会给 Agent 配上更完整的工作方式：
 
 这些会放到后面的安全、调试和完整项目实战里。
 
-这一章先把核心概念和基本代码形态讲清楚。
+## 本章路线
 
-## 最终产物
+<div class="a4a-chapter-map">
+  <a href="./planning">
+    <span>01</span>
+    <strong>Planning</strong>
+    <em>先想清楚再行动</em>
+  </a>
+  <a href="./filesystem">
+    <span>02</span>
+    <strong>文件系统</strong>
+    <em>把计划和笔记保存成文件</em>
+  </a>
+  <a href="./context-engineering">
+    <span>03</span>
+    <strong>Context engineering</strong>
+    <em>控制 Agent 当前看什么</em>
+  </a>
+  <a href="./memory">
+    <span>04</span>
+    <strong>Memory</strong>
+    <em>跨对话记住长期偏好</em>
+  </a>
+  <a href="./subagent">
+    <span>05</span>
+    <strong>Subagent</strong>
+    <em>把子任务交给专门的助理</em>
+  </a>
+</div>
 
-学完这一章后，你会得到一个更像“学习项目助理”的 Agent。
-
-它应该能做到：
-
-- 先把复杂任务拆成步骤。
-- 保存学习计划或学习笔记。
-- 知道什么时候该把大段资料放到文件里，而不是全部塞进回答。
-- 理解短期上下文和长期记忆的区别。
-- 知道 subagent 为什么能减少主 Agent 的混乱。
-
-## 章节
-
-1. [Planning：先想清楚再行动](./planning.md)
-2. [文件系统：让 Agent 保存中间结果](./filesystem.md)
-3. [Context engineering：让 Agent 看见该看的信息](./context-engineering.md)
-4. [Memory：让 Agent 记住长期信息](./memory.md)
-5. [Subagent：让多个 Agent 分工协作](./subagent.md)
-
-## 通过标准
+## 学完怎么判断对不对
 
 学完这一章后，你应该能用自己的话解释：
 
-```text
-Planning：让 Agent 先拆任务，而不是直接硬答。
-Filesystem：让 Agent 把计划、资料和中间结果保存下来。
-Context engineering：控制 Agent 当前看什么、暂时不看什么。
-Memory：让 Agent 跨对话记住长期偏好和背景。
-Subagent：让主 Agent 把某些子任务交给更专门的 Agent。
-```
+- **Planning**：让 Agent 先拆任务，而不是直接硬答。
+- **Filesystem**：让 Agent 把计划、资料和中间结果保存下来。
+- **Context engineering**：控制 Agent 当前看什么、暂时不看什么。
+- **Memory**：让 Agent 跨对话记住长期偏好和背景。
+- **Subagent**：让主 Agent 把某些子任务交给更专门的 Agent。
 
 你还应该能判断：
 
@@ -112,4 +110,4 @@ Subagent：让主 Agent 把某些子任务交给更专门的 Agent。
 - 哪些任务需要 Deep Agents 的长任务能力。
 - 为什么复杂 Agent 需要规划、文件、上下文、记忆和分工。
 
-下一节先从最基础的一件事开始：让 Agent 先写计划，再开始行动。
+如果这些能说清楚，MaxLance Assistant 就开始从“工具调用助手”变成“学习项目助理”。

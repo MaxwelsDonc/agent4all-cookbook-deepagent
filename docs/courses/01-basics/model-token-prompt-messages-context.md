@@ -70,11 +70,7 @@ result = agent.invoke({
 
 你说：
 
-```text
-你是一个耐心的新手教练。
-请帮我制定一个 7 天 DeepAgent 学习计划。
-我每天只有 1 小时。
-```
+> 你是一个耐心的新手教练。请帮我制定一个 7 天 DeepAgent 学习计划。我每天只有 1 小时。
 
 这里面可以拆出几个东西：
 
@@ -98,13 +94,11 @@ Agent 每一步做决定时，不是凭空想的。
 
 它通常会看这些东西：
 
-```text
-system prompt
-当前 user message
-之前的 assistant message
-工具返回结果
-文件或记忆里取出的信息
-```
+- system prompt
+- 当前 user message
+- 之前的 assistant message
+- 工具返回结果
+- 文件或记忆里取出的信息
 
 这些东西合在一起，就是它当前的 context。
 
@@ -118,15 +112,13 @@ system prompt
 
 所以你可以把一次 Agent 执行想成这样：
 
-```mermaid
-flowchart TD
-  SP[System Prompt<br/>身份和规则] --> C[Context<br/>当前可参考信息]
-  M[Messages<br/>对话记录] --> C
-  T[Tool Results<br/>工具结果] --> C
-  C --> Model[Model<br/>大模型]
-  Model --> Next[下一步动作或回答]
-  Next --> M
-```
+<div class="a4a-flow">
+  <div><b>三类信息汇入 Context</b><span>System Prompt（身份和规则）· Messages（对话记录）· Tool Results（工具结果）</span></div>
+  <div><b>Context：当前可参考信息</b></div>
+  <div><b>Model 读取 Context 推理</b></div>
+  <div><b>生成下一步动作或回答</b></div>
+  <div class="is-end"><b>结果写回 Messages</b><span>↻ 进入下一轮，Context 随之更新</span></div>
+</div>
 
 ## 代码里长什么样
 
@@ -168,11 +160,7 @@ result = agent.invoke({
 
 看下面这段话：
 
-```text
-你是一个只用小学水平语言讲解 AI 的老师。
-我每天只有 30 分钟。
-请帮我安排 3 天入门 Agent 的学习计划。
-```
+> 你是一个只用小学水平语言讲解 AI 的老师。我每天只有 30 分钟。请帮我安排 3 天入门 Agent 的学习计划。
 
 试着回答：
 
@@ -228,6 +216,14 @@ Token 会影响三件事：
 
 入门时不用精确计算 token，但要知道它不是无限的。
 
+## 自测
+
+试着回答这几个问题：
+
+1. Model、Prompt、Messages、Context 分别对应 Agent 里的什么？
+2. 为什么 context 不是模型知道的一切？
+3. 如果 MaxLance Assistant 忘了前面的话，可能和哪个概念有关？
+
 ## 小结
 
 先记住这句话：
@@ -236,12 +232,10 @@ Token 会影响三件事：
 
 对应到概念就是：
 
-```text
-Model：脑子
-Token：读写消耗的计量单位
-Prompt：你说的话
-Messages：对话记录
-Context：当前可参考信息
-```
+- **Model**：脑子
+- **Token**：读写消耗的计量单位
+- **Prompt**：你说的话
+- **Messages**：对话记录
+- **Context**：当前可参考信息
 
 下一节，我们会看 DeepAgent 到底 deep 在哪里。

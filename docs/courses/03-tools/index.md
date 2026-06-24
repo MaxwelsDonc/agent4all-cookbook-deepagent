@@ -1,47 +1,41 @@
 # 03. 让 Agent 会使用工具
 
-第二章里，我们已经跑通了一个最小 Agent。
+第二章里，你已经跑通了 MaxLance Assistant 的第一个版本。
 
 它可以回答问题，但还主要停留在“会说话”。
 
-从这一章开始，我们会把这个 Agent 变成贯穿全课程的学习助理：
+这一章要让它迈出关键一步：
 
-> MaxLance Assistant。
+> 从会说话，变成会做事。
 
-它的目标不是炫技，而是帮助小白一步一步学习 DeepAgent。
-
-这一章先让 MaxLance Assistant 学会使用工具。
-
-## 这一课你会学到什么
-
-- 为什么模型本身不能完成所有任务。
-- Tool 是什么。
-- Tool Calling 是什么。
-- Python 函数如何变成 Agent 工具。
-- 参数、返回值和 docstring 为什么重要。
-- Agent 什么时候会调用工具。
-- 工具调用失败时怎么办。
-- 工具权限为什么需要谨慎。
-
-## 一句话讲清楚
+## 这一章会学什么
 
 工具就是 Agent 可以使用的能力。
 
 Tool Calling 就是 Agent 判断“现在需要打开某个工具”，然后把参数交给工具执行。
 
-## 这一章会做什么
+这一章会围绕 MaxLance Assistant 增加三个基础工具：
 
-我们会一步一步完成：
+- 计算学习时间。
+- 从本地资料库推荐学习资料。
+- 把学习计划保存到安全目录。
 
-1. 理解 Agent 为什么需要工具。
-2. 写一个最简单的 Python 工具。
-3. 把工具交给 MaxLance Assistant。
-4. 观察工具返回值如何进入 Agent 的回答。
-5. 理解参数、返回值和 docstring。
-6. 给文件工具、资料推荐工具设置清晰边界。
-7. 认识工具失败时的错误信息。
+这些工具不复杂，但足够说明 Agent 从“生成一段话”到“先做一步可验证操作，再回答用户”的关键变化。
 
-## 这一章不要求你掌握什么
+## 为什么 Agent 需要工具
+
+模型很会理解和表达，但它不能凭空完成所有事情。
+
+只靠模型本身，MaxLance Assistant 很容易遇到这些限制：
+
+- 不适合可靠地完成精确计算。
+- 不能真正保存你的学习计划。
+- 不能读取或使用外部资料。
+- 可能把不知道的内容说得像真的一样。
+
+工具让 Agent 能把一部分任务交给确定的函数或系统完成。
+
+## 本章不做什么
 
 你现在不用掌握：
 
@@ -53,31 +47,39 @@ Tool Calling 就是 Agent 判断“现在需要打开某个工具”，然后把
 
 这些会在后面的课程继续展开。
 
-这一章只关注一件事：
+这一章只关注一件事：让 MaxLance Assistant 学会调用工具。
 
-> 让 Agent 学会调用工具。
+## 本章路线
 
-## 最终产物
+<div class="a4a-chapter-map">
+  <a href="./why-tools">
+    <span>01</span>
+    <strong>为什么 Agent 需要工具</strong>
+    <em>理解工具补上了模型的哪些短板</em>
+  </a>
+  <a href="./first-python-tool">
+    <span>02</span>
+    <strong>写第一个 Python 工具</strong>
+    <em>把一个函数变成 Agent 能用的工具</em>
+  </a>
+  <a href="./agent-call-tool">
+    <span>03</span>
+    <strong>让 Agent 调用工具</strong>
+    <em>把工具交给 Agent 并触发调用</em>
+  </a>
+  <a href="./tool-parameters-return-docstring">
+    <span>04</span>
+    <strong>工具参数、返回值和 docstring</strong>
+    <em>让 Agent 看懂怎么用你的工具</em>
+  </a>
+  <a href="./tool-failure-permission">
+    <span>05</span>
+    <strong>工具失败与权限边界</strong>
+    <em>处理报错并守住安全边界</em>
+  </a>
+</div>
 
-你会得到一个更像学习助理的 MaxLance Assistant。
-
-它会拥有三个基础工具：
-
-- 计算学习时间。
-- 从本地资料库推荐学习资料。
-- 把学习计划保存到安全目录。
-
-这些工具不复杂，但足够说明 Agent 从“会说话”到“会做事”的关键变化。
-
-## 章节
-
-1. [为什么 Agent 需要工具](./why-tools.md)
-2. [写第一个 Python 工具](./first-python-tool.md)
-3. [让 Agent 调用工具](./agent-call-tool.md)
-4. [工具参数、返回值和 docstring](./tool-parameters-return-docstring.md)
-5. [工具失败与权限边界](./tool-failure-permission.md)
-
-## 通过标准
+## 学完怎么判断对不对
 
 学完这一章后，你应该能做到：
 
@@ -88,4 +90,4 @@ Tool Calling 就是 Agent 判断“现在需要打开某个工具”，然后把
 - 看懂一次工具调用的大概流程。
 - 知道文件工具和资料推荐工具为什么需要边界。
 
-如果这些都完成，你就可以进入第四章，让 MaxLance Assistant 处理更复杂的任务。
+如果这些都完成，MaxLance Assistant 就不只是会回答问题，而是开始具备做事能力。

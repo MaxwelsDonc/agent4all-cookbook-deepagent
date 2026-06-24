@@ -7,6 +7,17 @@ export default withMermaid(
     description: '让 DeepAgent 不再 deep',
     base: '/agent4all-cookbook-deepagent/',
     cleanUrls: true,
+    head: [
+      ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
+      ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
+      [
+        'link',
+        {
+          rel: 'stylesheet',
+          href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap'
+        }
+      ]
+    ],
     themeConfig: {
       logo: '/logo.svg',
       siteTitle: 'Agent4all',
@@ -29,8 +40,7 @@ export default withMermaid(
             { text: '什么是 Agent', link: '/courses/01-basics/what-is-agent' },
             { text: 'LangChain、LangGraph 和 DeepAgents', link: '/courses/01-basics/langchain-langgraph-deepagents' },
             { text: 'Model、Token、Prompt、Messages 和 Context', link: '/courses/01-basics/model-token-prompt-messages-context' },
-            { text: 'DeepAgent 到底 deep 在哪里', link: '/courses/01-basics/why-deep-agent' },
-            { text: '本章自测', link: '/courses/01-basics/chapter-check' }
+            { text: 'DeepAgent 到底 deep 在哪里', link: '/courses/01-basics/why-deep-agent' }
           ]
         },
         {
@@ -69,7 +79,13 @@ export default withMermaid(
         {
           text: '05. 安全、调试与完整项目实战',
           items: [
-            { text: '课程介绍', link: '/courses/05-project/' }
+            { text: '课程介绍', link: '/courses/05-project/' },
+            { text: 'Permission：设置边界', link: '/courses/05-project/permissions' },
+            { text: 'Human-in-the-loop：先问人', link: '/courses/05-project/human-in-the-loop' },
+            { text: 'Sandbox：安全试错', link: '/courses/05-project/sandbox' },
+            { text: 'Streaming：看执行过程', link: '/courses/05-project/streaming' },
+            { text: 'LangSmith：调试复盘', link: '/courses/05-project/langsmith' },
+            { text: '最终项目实战', link: '/courses/05-project/final-project' }
           ]
         }
       ],

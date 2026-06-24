@@ -128,15 +128,21 @@ which python
 
 路径里应该包含 `.venv`。
 
+## 自测
+
+确认你能回答：
+
+1. `deepagents`、`python-dotenv`、provider 包分别负责什么？
+2. 为什么安装依赖前要先确认虚拟环境已经激活？
+3. 如果运行代码时提示 `ModuleNotFoundError`，你会先做什么？
+
 ## 小结
 
 这一节你只需要记住：
 
-```text
-pip：安装 Python 包的命令
-deepagents：创建 Deep Agent 的核心包
-python-dotenv：读取 .env 的工具
-langchain-openai / langchain-anthropic：连接模型服务的包
-```
+- **`pip`**：安装 Python 包的命令
+- **`deepagents`**：创建 Deep Agent 的核心包
+- **`python-dotenv`**：读取 `.env` 的工具
+- **`langchain-openai` / `langchain-anthropic`**：连接模型服务的包
 
 下一节，我们会写第一个最小 Agent。
