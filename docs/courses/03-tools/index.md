@@ -57,7 +57,7 @@ Tool Calling 就是 Agent 判断“现在需要打开某个工具”，然后把
 
 > 让 Agent 学会调用工具。
 
-## 最终产物
+> 从会说话，变成会做事。
 
 你会得到一个更像学习助理的 MaxLance Assistant。
 

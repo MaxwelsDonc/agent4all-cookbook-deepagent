@@ -30,11 +30,9 @@ Agent 不是只返回一句话。
 
 第一章说过：
 
-```text
-Messages：聊天记录
-Tools：Agent 能用的工具
-Context：Agent 当前能看到的信息
-```
+- **Messages**：聊天记录
+- **Tools**：Agent 能用的工具
+- **Context**：Agent 当前能看到的信息
 
 现在你看到的输出，就是这些概念第一次落到真实结果里。
 
@@ -42,11 +40,7 @@ Context：Agent 当前能看到的信息
 
 如果你直接 `print(result)`，可能会看到一个比较大的结构。
 
-先找里面的：
-
-```text
-messages
-```
+先找里面的 `messages` 字段。
 
 `messages` 里通常会有多条消息。
 

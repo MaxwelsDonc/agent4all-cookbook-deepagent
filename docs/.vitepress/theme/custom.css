@@ -1,0 +1,420 @@
+/* ============================================================
+   Agent4all — quiet editorial theme, inspired by Claude's blog.
+   Warm paper, restrained terracotta accent, serif headings,
+   generous reading measure. No background patterns or
+   decorative noise: the content carries the page.
+   ============================================================ */
+
+:root {
+  /* Type */
+  --vp-font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  --a4a-font-serif: 'Newsreader', Georgia, 'Songti SC', 'Source Han Serif SC',
+    'Noto Serif CJK SC', serif;
+
+  /* Warm paper palette */
+  --vp-c-bg: #faf9f4;
+  --vp-c-bg-alt: #f3f1e8;
+  --vp-c-bg-soft: #f3f1e8;
+  --vp-c-bg-elv: #fffdf8;
+
+  --vp-c-text-1: #1f1c16;
+  --vp-c-text-2: #58534b;
+  --vp-c-text-3: #8c857a;
+
+  --vp-c-border: rgba(40, 35, 26, 0.10);
+  --vp-c-divider: rgba(40, 35, 26, 0.08);
+
+  /* Claude clay accent */
+  --vp-c-brand-1: #b5532e;
+  --vp-c-brand-2: #9c4626;
+  --vp-c-brand-3: #cc785c;
+  --vp-c-brand-soft: rgba(204, 120, 92, 0.13);
+
+  --a4a-ink: #1f1c16;
+  --a4a-muted: #58534b;
+  --a4a-faint: #8c857a;
+  --a4a-line: rgba(40, 35, 26, 0.10);
+  --a4a-line-strong: rgba(40, 35, 26, 0.20);
+  --a4a-accent: #b5532e;
+}
+
+.dark {
+  --vp-c-bg: #1c1a15;
+  --vp-c-bg-alt: #15130f;
+  --vp-c-bg-soft: #24211a;
+  --vp-c-bg-elv: #24211a;
+
+  --vp-c-text-1: #f4ecdd;
+  --vp-c-text-2: #d3c7b6;
+  --vp-c-text-3: #a59a89;
+
+  --vp-c-border: rgba(244, 236, 221, 0.12);
+  --vp-c-divider: rgba(244, 236, 221, 0.09);
+
+  --vp-c-brand-1: #e0a081;
+  --vp-c-brand-2: #cf8a69;
+  --vp-c-brand-3: #b5683f;
+  --vp-c-brand-soft: rgba(224, 160, 129, 0.15);
+
+  --a4a-ink: #f4ecdd;
+  --a4a-muted: #d3c7b6;
+  --a4a-faint: #a59a89;
+  --a4a-line: rgba(244, 236, 221, 0.12);
+  --a4a-line-strong: rgba(244, 236, 221, 0.24);
+  --a4a-accent: #e0a081;
+}
+
+html {
+  scroll-padding-top: 96px;
+}
+
+body {
+  background: var(--vp-c-bg);
+  color: var(--a4a-ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Chrome: translucent, no heavy frames */
+.VPNav,
+.VPLocalNav {
+  background-color: color-mix(in srgb, var(--vp-c-bg) 86%, transparent);
+  backdrop-filter: blur(14px);
+}
+
+.VPSidebar {
+  background-color: var(--vp-c-bg);
+  border-right: 1px solid var(--a4a-line);
+}
+
+/* Sidebar: lighter weight, clearer active state */
+.VPSidebarItem.level-0 > .item > .text {
+  color: var(--a4a-faint);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.VPSidebarItem .text {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ----------------------------------------------------------------
+   Reading column + base typography
+   ---------------------------------------------------------------- */
+
+.VPDoc .content-container {
+  max-width: 720px !important;
+}
+
+.vp-doc {
+  font-size: 17px;
+  line-height: 1.78;
+}
+
+.vp-doc p,
+.vp-doc li {
+  text-wrap: pretty;
+}
+
+.vp-doc h1,
+.vp-doc h2,
+.vp-doc h3 {
+  color: var(--a4a-ink);
+  text-wrap: balance;
+}
+
+.vp-doc h1 {
+  font-family: var(--a4a-font-serif);
+  font-weight: 500;
+  font-size: clamp(2.2rem, 4.4vw, 2.9rem);
+  line-height: 1.14;
+  letter-spacing: -0.012em;
+  margin-bottom: 0.6rem;
+}
+
+.vp-doc h2 {
+  font-family: var(--a4a-font-serif);
+  font-weight: 500;
+  font-size: clamp(1.5rem, 2.6vw, 1.85rem);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  margin-top: 3.4rem;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.vp-doc h3 {
+  font-weight: 650;
+  font-size: 1.22rem;
+  margin-top: 2.2rem;
+}
+
+.vp-doc a {
+  color: var(--a4a-accent);
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--a4a-accent) 35%, transparent);
+  text-underline-offset: 3px;
+}
+
+.vp-doc a:hover {
+  text-decoration-color: var(--a4a-accent);
+}
+
+.vp-doc blockquote {
+  margin: 1.6rem 0;
+  border-left: 2px solid var(--a4a-accent);
+  border-radius: 0;
+  padding-left: 1.25rem;
+  background: transparent;
+  color: var(--a4a-muted);
+  font-family: var(--a4a-font-serif);
+  font-size: 1.16rem;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.vp-doc blockquote p {
+  margin: 0;
+}
+
+/* Code: quiet on paper */
+.vp-doc :not(pre) > code {
+  background: var(--vp-c-brand-soft);
+  color: var(--a4a-ink);
+  font-size: 0.86em;
+  border-radius: 5px;
+}
+
+.vp-doc div[class*='language-'] {
+  border: 1px solid var(--a4a-line);
+  border-radius: 10px;
+}
+
+/* Tables: light, no fill block */
+.vp-doc table {
+  display: table;
+  width: 100%;
+  border-radius: 0;
+  font-size: 15px;
+}
+
+.vp-doc th {
+  background: transparent;
+  color: var(--a4a-faint);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-bottom: 1.5px solid var(--a4a-line-strong);
+}
+
+.vp-doc td {
+  border-color: var(--a4a-line);
+}
+
+/* ----------------------------------------------------------------
+   Shared content blocks (course overview + chapter maps)
+   Kept minimal: thin rules, no heavy borders or fills.
+   ---------------------------------------------------------------- */
+
+/* Two short side-by-side notes */
+.a4a-two-column {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 40px;
+  margin: 28px 0 8px;
+}
+
+.a4a-two-column div {
+  border-top: 1.5px solid var(--a4a-line-strong);
+  padding-top: 16px;
+}
+
+.a4a-two-column h3 {
+  margin: 0 0 8px;
+  font-family: var(--a4a-font-serif);
+  font-weight: 600;
+  font-size: 1.15rem;
+}
+
+.a4a-two-column p {
+  margin: 0;
+  color: var(--a4a-muted);
+  line-height: 1.72;
+}
+
+/* The five-course sequence — a clean list of rows */
+.a4a-course-sequence {
+  margin: 24px 0 8px;
+  border-top: 1px solid var(--a4a-line);
+}
+
+.a4a-course-sequence a {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  gap: 4px 24px;
+  align-items: baseline;
+  border-bottom: 1px solid var(--a4a-line);
+  padding: 24px 0;
+  color: inherit;
+  text-decoration: none;
+}
+
+.a4a-course-sequence span {
+  grid-row: span 3;
+  color: var(--a4a-faint);
+  font-family: var(--a4a-font-serif);
+  font-size: 1.1rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.a4a-course-sequence strong {
+  color: var(--a4a-ink);
+  font-family: var(--a4a-font-serif);
+  font-weight: 600;
+  font-size: 1.2rem;
+  line-height: 1.35;
+}
+
+.a4a-course-sequence em,
+.a4a-course-sequence b {
+  font-style: normal;
+  font-weight: 400;
+  color: var(--a4a-muted);
+  line-height: 1.66;
+}
+
+.a4a-course-sequence b {
+  color: var(--a4a-faint);
+  font-size: 0.92em;
+}
+
+.a4a-course-sequence a:hover strong {
+  color: var(--a4a-accent);
+}
+
+/* Chapter map — single-column numbered sequence (number + title + gloss) */
+.a4a-chapter-map {
+  margin: 24px 0 8px;
+  border-top: 1px solid var(--a4a-line);
+}
+
+.a4a-chapter-map a {
+  display: grid;
+  grid-template-columns: 46px minmax(0, 1fr);
+  gap: 3px 22px;
+  align-items: baseline;
+  border-bottom: 1px solid var(--a4a-line);
+  padding: 18px 0;
+  color: inherit;
+  text-decoration: none;
+}
+
+.a4a-chapter-map span {
+  grid-row: span 2;
+  color: var(--a4a-faint);
+  font-family: var(--a4a-font-serif);
+  font-size: 1.05rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.a4a-chapter-map strong {
+  color: var(--a4a-ink);
+  font-weight: 600;
+  font-size: 1.06rem;
+  line-height: 1.4;
+}
+
+.a4a-chapter-map em {
+  font-style: normal;
+  color: var(--a4a-muted);
+  line-height: 1.6;
+}
+
+.a4a-chapter-map a:hover strong {
+  color: var(--a4a-accent);
+}
+
+/* Flow — vertical timeline that replaces mermaid flowcharts */
+.a4a-flow {
+  margin: 30px 0;
+  padding-left: 5px;
+}
+
+.a4a-flow > div {
+  position: relative;
+  padding: 0 0 24px 30px;
+  border-left: 2px solid var(--a4a-line);
+}
+
+.a4a-flow > div:last-child {
+  border-left-color: transparent;
+  padding-bottom: 0;
+}
+
+.a4a-flow > div::before {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: 1px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--vp-c-bg);
+  border: 2px solid var(--a4a-accent);
+}
+
+.a4a-flow .is-end::before {
+  background: var(--a4a-accent);
+}
+
+.a4a-flow b {
+  display: block;
+  color: var(--a4a-ink);
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.a4a-flow span {
+  display: block;
+  margin-top: 4px;
+  color: var(--a4a-muted);
+  font-size: 0.92em;
+  line-height: 1.66;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .a4a-course-sequence a,
+  .a4a-chapter-map a {
+    transition: color 150ms ease, transform 150ms ease;
+  }
+
+  .a4a-course-sequence a:hover,
+  .a4a-chapter-map a:hover {
+    transform: translateX(3px);
+  }
+}
+
+@media (max-width: 720px) {
+  html {
+    scroll-padding-top: 72px;
+  }
+
+  .vp-doc {
+    font-size: 16px;
+  }
+
+  .a4a-two-column {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .a4a-two-column div {
+    margin-bottom: 24px;
+  }
+}
