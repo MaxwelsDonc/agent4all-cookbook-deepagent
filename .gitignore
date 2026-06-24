@@ -5,9 +5,11 @@ docs/.vitepress/dist/
 .venv/
 .env
 first_agent.py
+maxlance_agent.py
 complex_agent.py
 memory_agent.py
 subagent_demo.py
+learning_notes/
 notes/
 memories/
 
